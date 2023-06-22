@@ -42,8 +42,10 @@ export default function Main() {
   });
   return (
     <div className="main">
-      <h1>Score:{score}</h1>
-      <h1>Best Score:{storage.getBestScore()}</h1>
+      <div className="scores">
+        <h1>Score:{score}</h1>
+        <h1>Best Score:{storage.getBestScore()}</h1>
+      </div>
       <div className="cards">{cards}</div>
     </div>
   );

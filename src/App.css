@@ -7,11 +7,20 @@ header {
   color: white;
   background-color: #2563eb;
 }
+.main {
+  display: grid;
+  place-content: center;
+}
+
+.scores {
+  display: flex;
+  justify-content: space-around;
+}
 
 .cards {
   display: flex;
   flex-wrap: wrap;
-  max-width: 800px;
+  max-width: 1500px;
   gap: 20px;
 }
 .card {
