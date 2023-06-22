@@ -8,6 +8,7 @@
   background-color: #d9f99d;
   padding: 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
 .card > img {
   width: 200px;

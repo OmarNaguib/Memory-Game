@@ -3,10 +3,9 @@ import importAll from "../utils/importAll";
 import shuffle from "../utils/shuffle";
 
 export default function Cards() {
-  const characters = importAll(
-    require.context("../assets/", false, /\.(png|jpe?g|svg|webp)$/)
-  );
-  const [cardOrder, setCardOrder] = useState(characters);
+  const getInitialData = () =>
+    importAll(require.context("../assets/", false, /\.(png|jpe?g|svg|webp)$/));
+  const [cardOrder, setCardOrder] = useState(getInitialData());
   const shuffleCards = () => {
     setCardOrder((prevOrder) => [...shuffle(prevOrder)]);
   };
@@ -22,6 +21,5 @@ export default function Cards() {
       </div>
     );
   });
-  console.log(characters);
   return <div className="cards">{cards}</div>;
 }
