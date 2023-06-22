@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Memory-card/static/css/main.a76925fd.css",
+    "main.js": "/Memory-card/static/js/main.1ec0b366.js",
+    "static/media/wing.png": "/Memory-card/static/media/wing.4738c6bfa9cbbad236de.png",
+    "static/media/Annie Leonhart.webp": "/Memory-card/static/media/Annie Leonhart.1e492a83ef682a856332.webp",
+    "static/media/Armin Arlelt.webp": "/Memory-card/static/media/Armin Arlelt.598d3cd6a86513a1f2f7.webp",
+    "static/media/Eren Jaeger.webp": "/Memory-card/static/media/Eren Jaeger.9c799d71e6c510ca107b.webp",
+    "static/media/Hange Zoë.webp": "/Memory-card/static/media/Hange Zoë.7e0551a9df91f52f51d8.webp",
+    "static/media/Reiner Braun.webp": "/Memory-card/static/media/Reiner Braun.387f38e3ff9df26ff92e.webp",
+    "static/media/CloisterBlack.ttf": "/Memory-card/static/media/CloisterBlack.0a8dea1a656175f7a896.ttf",
+    "static/media/Erwin Smith.webp": "/Memory-card/static/media/Erwin Smith.ff6888026e4ab517ee76.webp",
+    "static/media/Levi Ackermann.webp": "/Memory-card/static/media/Levi Ackermann.3f8cfe2540bbb7713ea6.webp",
+    "static/media/Sasha Braus.webp": "/Memory-card/static/media/Sasha Braus.a1aa64b38da927be2003.webp",
+    "static/media/Mikasa Ackermann.webp": "/Memory-card/static/media/Mikasa Ackermann.8f7b77c07b4823ca6604.webp",
+    "index.html": "/Memory-card/index.html",
+    "main.a76925fd.css.map": "/Memory-card/static/css/main.a76925fd.css.map",
+    "main.1ec0b366.js.map": "/Memory-card/static/js/main.1ec0b366.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a76925fd.css",
+    "static/js/main.1ec0b366.js"
+  ]
+}
