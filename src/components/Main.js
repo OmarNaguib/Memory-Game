@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import importAll from "../utils/importAll";
 import shuffle from "../utils/shuffle";
-import storage from "../utils/storge";
+import storage from "../utils/storage";
 
-export default function Cards() {
+export default function Main() {
   const getInitialData = () =>
     importAll(require.context("../assets/", false, /\.(png|jpe?g|svg|webp)$/));
   const [cardOrder, setCardOrder] = useState(getInitialData());
