@@ -2,9 +2,17 @@
   font-family: "pirate";
   src: url("./assets/CloisterBlack.ttf") format("truetype"); /* Safari, Android, iOS */
 }
+:root {
+  --slate-700: #334155;
+  --slate-300: #cbd5e1;
+  --slate-900: #0f172a;
+}
+body {
+  background-color: var(--slate-700);
+}
 
 header {
-  height: 80px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +21,7 @@ header {
   color: white;
   background-color: #2563eb;
   font-family: "pirate";
+  background-color: var(--slate-900);
 }
 
 header > img {
@@ -26,6 +35,7 @@ header > img {
 .scores {
   display: flex;
   justify-content: space-around;
+  color: white;
 }
 
 .cards {
@@ -39,6 +49,12 @@ header > img {
   padding: 20px;
   border-radius: 5px;
   cursor: pointer;
+  background-color: var(--slate-300);
+  width: 215px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .card > img {
   width: 200px;
