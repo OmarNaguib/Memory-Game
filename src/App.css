@@ -1,11 +1,22 @@
+@font-face {
+  font-family: "pirate";
+  src: url("./assets/CloisterBlack.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
 header {
-  height: 50px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 70px;
+  gap: 15px;
   color: white;
   background-color: #2563eb;
+  font-family: "pirate";
+}
+
+header > img {
+  height: 70px;
 }
 .main {
   display: grid;
@@ -18,9 +29,9 @@ header {
 }
 
 .cards {
+  margin: 0px 50px;
   display: flex;
   flex-wrap: wrap;
-  max-width: 1500px;
   gap: 20px;
 }
 .card {
@@ -32,4 +43,5 @@ header {
 .card > img {
   width: 200px;
   height: 200px;
+  border-radius: 5px;
 }

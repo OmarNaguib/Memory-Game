@@ -5,7 +5,9 @@ import storage from "../utils/storage";
 
 export default function Main() {
   const getInitialData = () =>
-    importAll(require.context("../assets/", false, /\.(png|jpe?g|svg|webp)$/));
+    importAll(
+      require.context("../assets/characters/", false, /\.(png|jpe?g|svg|webp)$/)
+    );
   const [cardOrder, setCardOrder] = useState(getInitialData());
 
   const [score, setScore] = useState(0);
