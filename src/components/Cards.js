@@ -9,17 +9,35 @@ export default function Cards() {
   const shuffleCards = () => {
     setCardOrder((prevOrder) => [...shuffle(prevOrder)]);
   };
-
-  const cardClick = () => {
+  const [score, setScore] = useState(0);
+  const cardClick = (item) => {
+    if (item.chosen) {
+      // reset score and data
+      setScore(0);
+      setCardOrder(getInitialData());
+    } else {
+      item.chosen = true;
+      setScore(score + 1);
+    }
     shuffleCards();
   };
   const cards = cardOrder.map((item) => {
     return (
-      <div className="card" onClick={cardClick}>
+      <div
+        className="card"
+        onClick={() => {
+          cardClick(item);
+        }}
+      >
         <img src={item.src} alt={item.name} />
         <h2>{item.name}</h2>
       </div>
     );
   });
-  return <div className="cards">{cards}</div>;
+  return (
+    <div className="cards">
+      {cards}
+      <h1>Score:{score}</h1>
+    </div>
+  );
 }
