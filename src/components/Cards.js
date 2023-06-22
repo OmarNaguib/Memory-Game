@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import importAll from "../utils/importAll";
 import shuffle from "../utils/shuffle";
+import storage from "../utils/storge";
 
 export default function Cards() {
   const getInitialData = () =>
     importAll(require.context("../assets/", false, /\.(png|jpe?g|svg|webp)$/));
   const [cardOrder, setCardOrder] = useState(getInitialData());
+
+  const [score, setScore] = useState(0);
+
+  if (!storage.getBestScore()) storage.initializeStorage();
+
   const shuffleCards = () => {
     setCardOrder((prevOrder) => [...shuffle(prevOrder)]);
   };
-  const [score, setScore] = useState(0);
   const cardClick = (item) => {
     if (item.chosen) {
       // reset score and data
@@ -17,6 +22,7 @@ export default function Cards() {
       setCardOrder(getInitialData());
     } else {
       item.chosen = true;
+      if (score + 1 > storage.getBestScore()) storage.setNewBest(score + 1);
       setScore(score + 1);
     }
     shuffleCards();
@@ -35,9 +41,10 @@ export default function Cards() {
     );
   });
   return (
-    <div className="cards">
-      {cards}
+    <div className="main">
       <h1>Score:{score}</h1>
+      <h1>Best Score:{storage.getBestScore()}</h1>
+      <div className="cards">{cards}</div>
     </div>
   );
 }
