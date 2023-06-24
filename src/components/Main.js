@@ -3,6 +3,7 @@ import importAll from "../utils/importAll";
 import shuffle from "../utils/shuffle";
 import storage from "../utils/storage";
 import LossMessage from "./LossMessage";
+import WinMessage from "./WinMessage";
 
 export default function Main() {
   const getInitialData = () =>
@@ -14,6 +15,10 @@ export default function Main() {
   const [score, setScore] = useState(0);
 
   const [lost, setLost] = useState(false);
+  const [won, setWon] = useState(false);
+
+  const checkWin = (list) =>
+    list.reduce((total, current) => total && current.chosen, true);
 
   const restart = () => {
     // reset score and data
@@ -38,6 +43,7 @@ export default function Main() {
       item.chosen = true;
       if (score + 1 > storage.getBestScore()) storage.setNewBest(score + 1);
       setScore(score + 1);
+      if (checkWin(cardOrder)) setWon(true);
     }
     shuffleCards();
   };
@@ -67,6 +73,13 @@ export default function Main() {
           setLost={setLost}
           restart={restart}
         ></LossMessage>
+      ) : null}
+      {won ? (
+        <WinMessage
+          score={score}
+          setWon={setWon}
+          restart={restart}
+        ></WinMessage>
       ) : null}
     </div>
   );
