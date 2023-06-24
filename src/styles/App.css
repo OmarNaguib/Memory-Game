@@ -43,6 +43,7 @@ header > img {
   margin: 0px 50px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 .card {
