@@ -4,6 +4,7 @@ import shuffle from "../utils/shuffle";
 import storage from "../utils/storage";
 import LossMessage from "./LossMessage";
 import WinMessage from "./WinMessage";
+import uniqid from "uniqid";
 
 export default function Main() {
   const getInitialData = () =>
@@ -54,6 +55,7 @@ export default function Main() {
         onClick={() => {
           cardClick(item, index);
         }}
+        key={uniqid()}
       >
         <img src={item.src} alt={item.name} />
         <h2>{item.name}</h2>
