@@ -17,24 +17,30 @@ export default function Main() {
   const shuffleCards = () => {
     setCardOrder((prevOrder) => [...shuffle(prevOrder)]);
   };
-  const cardClick = (item) => {
+  const cardClick = (item, index) => {
     if (item.chosen) {
       // reset score and data
       setScore(0);
       setCardOrder(getInitialData());
     } else {
+      setCardOrder((prevstate) =>
+        prevstate.map((item, currentIndex) => {
+          if (currentIndex === index) return { ...item, chosen: true };
+          return item;
+        })
+      );
       item.chosen = true;
       if (score + 1 > storage.getBestScore()) storage.setNewBest(score + 1);
       setScore(score + 1);
     }
     shuffleCards();
   };
-  const cards = cardOrder.map((item) => {
+  const cards = cardOrder.map((item, index) => {
     return (
       <div
         className="card"
         onClick={() => {
-          cardClick(item);
+          cardClick(item, index);
         }}
       >
         <img src={item.src} alt={item.name} />
