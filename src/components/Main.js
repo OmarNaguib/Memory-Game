@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import importAll from "../utils/importAll";
 import shuffle from "../utils/shuffle";
 import storage from "../utils/storage";
+import LossMessage from "./LossMessage";
 
 export default function Main() {
   const getInitialData = () =>
@@ -12,17 +13,22 @@ export default function Main() {
 
   const [score, setScore] = useState(0);
 
+  const [lost, setLost] = useState(false);
+
+  const restart = () => {
+    // reset score and data
+    setScore(0);
+    setCardOrder(getInitialData());
+  };
+
   if (!storage.getBestScore()) storage.initializeStorage();
 
   const shuffleCards = () => {
     setCardOrder((prevOrder) => [...shuffle(prevOrder)]);
   };
   const cardClick = (item, index) => {
-    if (item.chosen) {
-      // reset score and data
-      setScore(0);
-      setCardOrder(getInitialData());
-    } else {
+    if (item.chosen) setLost(true);
+    else {
       setCardOrder((prevstate) =>
         prevstate.map((item, currentIndex) => {
           if (currentIndex === index) return { ...item, chosen: true };
@@ -55,6 +61,13 @@ export default function Main() {
         <h1>Best Score:{storage.getBestScore()}</h1>
       </div>
       <div className="cards">{cards}</div>
+      {lost ? (
+        <LossMessage
+          score={score}
+          setLost={setLost}
+          restart={restart}
+        ></LossMessage>
+      ) : null}
     </div>
   );
 }
