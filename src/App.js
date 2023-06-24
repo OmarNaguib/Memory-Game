@@ -1,4 +1,5 @@
-import "./App.css";
+import "./styles/App.css";
+import "./styles/modal.css";
 import Main from "./components/Main";
 import wings from "./assets/wing.png";
 

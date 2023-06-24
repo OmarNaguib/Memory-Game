@@ -1,6 +1,6 @@
 @font-face {
   font-family: "pirate";
-  src: url("./assets/CloisterBlack.ttf") format("truetype"); /* Safari, Android, iOS */
+  src: url("../assets/CloisterBlack.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 :root {
   --slate-700: #334155;
@@ -61,34 +61,6 @@ header > img {
   width: 200px;
   height: 200px;
   border-radius: 5px;
-}
-
-.end-message {
-  display: flex;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-
-  justify-content: center;
-  align-items: center;
-
-  font-size: 35px;
-}
-
-.message-content {
-  display: grid;
-  place-content: center;
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  height: 180px;
-  width: 300px;
-  border-radius: 10px;
 }
 
 button {
