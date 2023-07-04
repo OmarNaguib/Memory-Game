@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Memory-Game/static/css/main.c7f99472.css",
-    "main.js": "/Memory-Game/static/js/main.765193d2.js",
+    "main.js": "/Memory-Game/static/js/main.733acf2f.js",
     "static/media/wing.png": "/Memory-Game/static/media/wing.4738c6bfa9cbbad236de.png",
     "static/media/Annie Leonhart.webp": "/Memory-Game/static/media/Annie Leonhart.1e492a83ef682a856332.webp",
     "static/media/Jean Kirschtein.webp": "/Memory-Game/static/media/Jean Kirschtein.512f1a5e38d4e8e4037e.webp",
@@ -18,10 +18,10 @@
     "static/media/Mikasa Ackermann.webp": "/Memory-Game/static/media/Mikasa Ackermann.8f7b77c07b4823ca6604.webp",
     "index.html": "/Memory-Game/index.html",
     "main.c7f99472.css.map": "/Memory-Game/static/css/main.c7f99472.css.map",
-    "main.765193d2.js.map": "/Memory-Game/static/js/main.765193d2.js.map"
+    "main.733acf2f.js.map": "/Memory-Game/static/js/main.733acf2f.js.map"
   },
   "entrypoints": [
     "static/css/main.c7f99472.css",
-    "static/js/main.765193d2.js"
+    "static/js/main.733acf2f.js"
   ]
 }
